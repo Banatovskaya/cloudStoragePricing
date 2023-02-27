@@ -1,0 +1,246 @@
+:root {
+    --main-color:black;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 20px;
+}
+
+.marginLeft20{
+    margin-left: 20px;
+}
+
+.rangingsWrap{
+    display: flex;
+    justify-content: space-around;
+}
+
+.ranging{
+    display: grid;
+    width: 50%;
+    padding: 20px;
+    margin: 20px;
+    grid-template-columns: 1fr 100fr 100fr 1fr ;
+    grid-template-rows: 40px 40px 20px;
+    grid-template-areas: "lable lable value value" "left range range right" "min min max max";
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ranging__lable{
+    grid-area: lable;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.ranging__value{
+    grid-area: value;
+    justify-self: end;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.ranging__borderLeft{
+    grid-area: left;
+    justify-self: end;
+    width: 5px;
+    height: 20px;
+    background-color: var(--main-color);
+}
+
+.ranging__input {
+    width: 100%;
+    grid-area: range;
+    -webkit-appearance: none !important;
+    background-color: var(--main-color);
+    height: 5px;
+    cursor: pointer; 
+    margin: 0;
+}
+
+.ranging__input::-webkit-slider-thumb{
+    -webkit-appearance: none !important;
+    background-color: var(--main-color);
+    height: 40px;
+    width: 20px;
+}
+
+.ranging__input::-moz-range-thumb{
+    background-color: var(--main-color);
+    height: 40px;
+    width: 20px;
+}
+
+.ranging__borderRight{
+    grid-area: right;
+    width: 5px;
+    height: 20px;
+    background-color: var(--main-color)
+}
+
+.ranging__min{
+    grid-area: min;
+    font-weight: bold;
+}
+
+.ranging__max{
+    grid-area: max;
+    justify-self: end;
+    font-weight: bold;
+}
+
+.estimateContainer{
+    display: inline;
+    margin: 50px auto;
+}
+
+.estimateWrap{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 60px 0 60px;
+}
+
+.estimateItem{
+    display: grid;
+    grid-template-columns: 150px 80px 1fr ;
+    align-items:center;
+    margin: 20px 10px 20px 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.estimateItem__name{
+    display: flex;
+    flex-direction:column;
+    width: 150px;
+}
+
+.estimateItem__radioWrap{
+    display: flex;
+}
+
+
+.estimateItem__icon{
+    height: 50px;
+    width: 50px;
+}
+
+.estimateItem__scaleWrap{
+    display: flex;
+}
+
+.estimateItem__scale{
+    width: 100%;
+    height: 30px;
+    background-color: gray;
+    margin-right: 20px;
+}
+
+.estimateItem__value{
+    font-size: 28px;
+}
+
+.estimateItem__radioWrap{
+    font-size: 12px;
+}
+
+.verticaleLine{
+    position: absolute;
+    height: 100%;
+    width: 15px;
+    background-color: var(--main-color);
+    left: 225px;
+    top: 0px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px){
+
+    .container{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .rangingsWrap{
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0 auto;
+        margin-top: 150px;
+        width: 80%;
+    }
+
+    .ranging{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .ranging__lable{
+        font-size: 20px;
+    }
+    
+    .ranging__value{
+        font-size: 20px;
+    }
+
+    .estimateWrap{ 
+        margin: 20px 20px 20px 20px;
+        transform: rotate(-90deg) translate(-50px, 0%);
+        width: 500px;
+    } 
+
+    .estimateItem{
+        grid-template-columns: 70px 80px 1fr;
+    }
+
+    .estimateItem__name {
+        transform: rotate(90deg) translate(10%, 0%);
+        font-size: 20px;
+        width: 75px;
+    }
+
+    .estimateItem__icon {
+        transform: rotate(90deg);
+    }
+
+    .verticaleLine{
+        left: 145px;
+    }
+}
+
+@media (max-width: 576px){
+   
+    .estimateContainer{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .estimateItem{
+        margin: 10px;
+        grid-template-columns: 90px 50px 200px;
+    }
+
+    .estimateItem__icon{
+        width: 30px;
+        height: 30px;
+    }
+
+    .estimateItem__name{
+        font-size: 16px;
+        transform: rotate(0deg);
+    }
+
+    .estimateItem__radioWrap {
+        font-size: 10px;
+    }
+
+    .verticaleLine{
+        left: 135px;
+    }
+}

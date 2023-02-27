@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
+    <title>Cost Estimates</title>
+</head>
+    <div class="container">
+        <div class="rangingsWrap">
+            <div class="ranging">
+                <label class="ranging__lable" for="storage">Storage:</label>
+                <output class="ranging__value" for="storage" > GB</output>
+                <div class="ranging__borderLeft"></div>
+                <input class="ranging__input" type="range" id="storage" min="0" max="1000" name="storage" step="1" value="200" />
+                <div class="ranging__borderRight"></div>
+                <div class="ranging__min">0</div>
+                <div class="ranging__max">1000</div>
+            </div>
+            <div class="ranging">
+                <label class="ranging__lable" for="Transfer">Transfer:</label>
+                <output class="ranging__value" for="Transfer" > GB</output>
+                <div class="ranging__borderLeft"></div>
+                <input class="ranging__input" type="range" id="Transfer" min="0" max="1000" name="Transfer" step="1"/>
+                <div class="ranging__borderRight"></div>
+                <div class="ranging__min">0</div>
+                <div class="ranging__max">1000</div>
+            </div>
+        </div>
+
+        <div class="estimateContainer">
+            <div class="estimateWrap">
+                <div class="verticaleLine"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
